@@ -19,8 +19,10 @@
                     <span class="nav-text">Brands</span>
                 </a>
                 <ul aria-expanded="false">
-                    <li><a href="{{ route('view.brand') }}">View</a></li>
-                    <li><a href="{{ route('add.brand') }}">Add Brand</a></li>
+                    {{-- <li><a href="{{ route('view.brand') }}">View</a></li>
+                    <li><a href="{{ route('add.brand') }}">Add Brand</a></li> --}}
+                    <li><a href="#">View</a></li>
+                    <li><a href="#">Add Brand</a></li>
                 
                 </ul>
             </li>
@@ -31,8 +33,10 @@
                     <span class="nav-text">Products</span>
                 </a>
                 <ul aria-expanded="false">
-                    <li><a href="{{ route('view.products') }}">View</a></li>
-                    <li><a href="{{ route('add.product') }}">Add Product</a></li>
+                    {{-- <li><a href="{{ route('view.products') }}">View</a></li>
+                    <li><a href="{{ route('add.product') }}">Add Product</a></li> --}}
+                    <li><a href="#">View</a></li>
+                    <li><a href="#">Add Product</a></li>
                    
                 </ul>
             </li>
