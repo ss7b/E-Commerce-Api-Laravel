@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Mail\ForgetPassword;
+use App\Models\Brand;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -109,5 +110,13 @@ class DashboardController extends Controller
 
        return redirect()->back()->with('msg', 'Your Password is Updated Success');
        
+    }
+
+    public function dashboard() {
+
+        $Brand = Brand::count('id');
+
+        return view('dashboard', compact('Brand'));
+
     }
 }
