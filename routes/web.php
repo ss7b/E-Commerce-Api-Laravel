@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Route;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
 use App\Http\Controllers\DashboardController;
-
+use App\Http\Controllers\productController;
 
 Route::get('/', function () {
     return redirect()->route('login');
@@ -37,6 +37,20 @@ Route::controller(BrandController::class)->group(function () {
 
 });
 
+Route::controller(productController::class)->group(function () {
+
+    Route::middleware(['auth', 'verified','role:admin'])->group(function () {
+
+        Route::get('/add-product', 'add_product')->name('add.product');
+        Route::any('/store-product', 'store_product')->name('store.product');
+        Route::get('/view-products', 'view_products')->name('view.products');
+        Route::get('/edit-products/{id}', 'edit_product')->name('edit.product');
+        Route::any('/update-product', 'update_product')->name('update.product');
+        Route::get('/delete-product/{id}', 'delete_product')->name('delete.product');
+        
+    });
+
+});
 
 
 

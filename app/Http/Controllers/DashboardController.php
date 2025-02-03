@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Mail\ForgetPassword;
 use App\Models\Brand;
+use App\Models\product;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -115,8 +116,10 @@ class DashboardController extends Controller
     public function dashboard() {
 
         $Brand = Brand::count('id');
+        $productInStock = product::where('avalibale', '=', 1)->count('id');
+        $productOutStock = Product::where('avalibale', '=', 0)->count('id');
 
-        return view('dashboard', compact('Brand'));
+        return view('dashboard', compact('Brand', 'productInStock', 'productOutStock'));
 
     }
 }
